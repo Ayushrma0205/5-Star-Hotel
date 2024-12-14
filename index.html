@@ -7,7 +7,7 @@
     <style>
         /* General Styles */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
             color: #333;
@@ -15,22 +15,23 @@
         }
 
         .container {
-            width: 80%;
+            width: 85%;
             margin: auto;
             overflow: hidden;
         }
 
         /* Header Section */
         .header {
-            background: #444;
+            background: linear-gradient(to right, #4b79a1, #283e51);
             color: #fff;
-            padding: 20px 0;
+            padding: 30px 0;
             text-align: center;
         }
 
         .header h1 {
             margin: 0;
-            font-size: 2.5rem;
+            font-size: 2.8rem;
+            font-weight: bold;
         }
 
         .header p {
@@ -41,84 +42,122 @@
         .header nav ul {
             list-style: none;
             padding: 0;
+            margin: 20px 0 0 0;
         }
 
         .header nav ul li {
             display: inline;
-            margin: 0 10px;
+            margin: 0 15px;
         }
 
         .header nav ul li a {
             color: #fff;
             text-decoration: none;
+            font-size: 1rem;
+            font-weight: bold;
         }
 
-        /* Sections */
+        .header nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Section Styles */
         section {
-            padding: 20px 0;
+            padding: 30px 0;
             margin: 20px 0;
-            border-bottom: 1px solid #ccc;
         }
 
         section h2 {
             text-align: center;
             margin-bottom: 20px;
+            color: #283e51;
+            font-size: 2.2rem;
         }
 
         section p, section ul {
             text-align: center;
+            font-size: 1.1rem;
+            color: #555;
         }
 
-        /* Room Section */
+        /* Rooms Section */
         .room-list {
             display: flex;
             justify-content: space-between;
+            flex-wrap: wrap;
             gap: 20px;
         }
 
         .room {
             flex: 1;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             text-align: center;
+            background-color: #f9f9f9;
+        }
+
+        .room h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #4b79a1;
+        }
+
+        .room p {
+            font-size: 1rem;
+            color: #666;
         }
 
         /* Button Styles */
         .btn {
             display: inline-block;
-            padding: 10px 20px;
-            background: #444;
+            padding: 12px 25px;
+            background: #4b79a1;
             color: #fff;
             text-decoration: none;
             border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s ease;
         }
 
         .btn:hover {
-            background: #555;
+            background: #283e51;
         }
 
         /* Footer */
         .footer {
-            background: #444;
+            background: #283e51;
             color: #fff;
             text-align: center;
-            padding: 10px 0;
+            padding: 20px 0;
+            margin-top: 20px;
+        }
+
+        /* Animation */
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1.5s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
         }
     </style>
 </head>
 <body>
     <!-- Header Section -->
-    <header class="header">
+    <header class="header fade-in">
         <div class="container">
             <h1>Sharma Elegance Haven</h1>
             <p>Where Elegance Meets Comfort</p>
             <nav>
                 <ul>
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#rooms">Rooms & Suites</a></li>
+                    <li><a href="#rooms">Rooms</a></li>
                     <li><a href="#facilities">Facilities</a></li>
-                    <li><a href="#dining">Dining</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -126,67 +165,65 @@
     </header>
 
     <!-- Home Section -->
-    <section id="home" class="home">
+    <section id="home">
         <div class="container">
             <h2>Welcome to Sharma Elegance Haven</h2>
-            <p>Experience luxury and comfort like never before. Book your stay now!</p>
+            <p>Experience unparalleled luxury and comfort. Book your stay today!</p>
             <a href="#rooms" class="btn">Explore Rooms</a>
         </div>
     </section>
 
     <!-- Rooms Section -->
-    <section id="rooms" class="rooms">
+    <section id="rooms">
         <div class="container">
-            <h2>Rooms & Suites</h2>
+            <h2>Our Rooms</h2>
             <div class="room-list">
                 <div class="room">
                     <h3>Classic Single Room</h3>
-                    <p>Perfect for solo travelers with all the luxury essentials.</p>
+                    <p>Perfect for solo travelers with modern amenities and comfort.</p>
+                    <button onclick="showAlert('Classic Single Room')">Book Now</button>
                 </div>
                 <div class="room">
                     <h3>Classic Double Room</h3>
-                    <p>Spacious and ideal for couples or families.</p>
+                    <p>Spacious rooms ideal for couples and families.</p>
+                    <button onclick="showAlert('Classic Double Room')">Book Now</button>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Facilities Section -->
-    <section id="facilities" class="facilities">
+    <section id="facilities">
         <div class="container">
-            <h2>Facilities & Services</h2>
+            <h2>Facilities</h2>
             <ul>
                 <li>Spa and Wellness Center</li>
-                <li>Fine Dining Restaurant</li>
                 <li>Conference Halls</li>
-                <li>24/7 Concierge</li>
+                <li>Fine Dining Restaurant</li>
+                <li>24/7 Concierge Services</li>
             </ul>
         </div>
     </section>
 
-    <!-- Dining Section -->
-    <section id="dining" class="dining">
-        <div class="container">
-            <h2>Dining</h2>
-            <p>Relish gourmet cuisines at our in-house restaurant, offering a range of delicacies.</p>
-        </div>
-    </section>
-
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section id="contact">
         <div class="container">
             <h2>Contact Us</h2>
             <p>Email: info@sharmaelegancehaven.com</p>
             <p>Phone: +91-98765-43210</p>
-            <p>Address: Shyam Nagar, MR10 Road, Indore, Madhya Pradesh, 452010, India</p>
+            <p>Address: Shyam Nagar, MR10 Road, Indore, Madhya Pradesh, India</p>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 Sharma Elegance Haven. All Rights Reserved.</p>
-        </div>
+        <p>&copy; 2024 Sharma Elegance Haven. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        function showAlert(room) {
+            alert('You selected: ' + room + '. Please proceed to booking.');
+        }
+    </script>
 </body>
 </html>
