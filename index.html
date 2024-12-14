@@ -5,138 +5,123 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sharma Elegance Haven</title>
     <style>
-        /* Global Variables for Light and Dark Mode */
-        :root {
-            --bg-color: #f9f9f9;
-            --text-color: #333;
-            --primary-color: #1e3c72;
-            --secondary-color: #2a5298;
-            --gradient-bg: linear-gradient(to right, #1e3c72, #2a5298);
-            --dark-bg-color: #121212;
-            --dark-text-color: #f9f9f9;
-            --button-bg-color: #2a5298;
-        }
-
-        /* Dark Mode */
-        [data-theme="dark"] {
-            --bg-color: #121212;
-            --text-color: #f9f9f9;
-            --button-bg-color: #333;
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            font-family: 'Arial', sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body[data-theme="dark"] {
+            background-color: #121212;
+            color: #fff;
         }
 
         header {
-            background: var(--gradient-bg);
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
             color: white;
-            padding: 20px 0;
+            padding: 15px;
             text-align: center;
         }
 
         header h1 {
-            margin: 0;
-            font-size: 2.5em;
+            font-size: 2.5rem;
         }
 
+        header p {
+            font-size: 1.2rem;
+        }
+
+        /* Navbar */
         .navbar {
             display: flex;
             justify-content: center;
             background-color: #333;
             padding: 10px;
+            margin-bottom: 20px;
         }
 
         .navbar a {
             color: white;
-            padding: 14px 20px;
             text-decoration: none;
-            text-align: center;
-            font-size: 1.2em;
+            padding: 15px;
+            font-size: 1.2rem;
+            margin: 0 10px;
+            transition: background-color 0.3s;
         }
 
         .navbar a:hover {
-            background-color: #ddd;
-            color: black;
+            background-color: #444;
+            border-radius: 5px;
         }
 
-        .container {
+        /* Dashboard */
+        .dashboard {
+            display: flex;
+            justify-content: space-between;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .dashboard a {
+            color: #333;
+            text-decoration: none;
+            font-size: 1.2rem;
+            margin: 10px;
+        }
+
+        .dashboard a:hover {
+            color: #ff7e5f;
+        }
+
+        /* Section Pages */
+        .content-page {
+            display: none;
             padding: 20px;
         }
 
-        .container h2 {
-            text-align: center;
-            margin-bottom: 20px;
+        .content-page.active {
+            display: block;
         }
 
-        .button {
-            background-color: var(--button-bg-color);
+        .content-page h2 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .content-page p {
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        /* Dark Mode Button */
+        #dark-mode-toggle {
+            cursor: pointer;
+            background-color: #ff7e5f;
+            border: none;
             color: white;
             padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            font-size: 1.2em;
+            font-size: 1.1rem;
             border-radius: 5px;
             margin-top: 20px;
         }
 
-        .button:hover {
-            background-color: #1e3c72;
-        }
-
-        .dark-mode-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background-color: var(--primary-color);
-            color: white;
-            padding: 10px;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            font-size: 1em;
-        }
-
-        .dark-mode-toggle:hover {
-            background-color: #333;
-        }
-
-        .dashboard {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 30px;
-        }
-
-        .dashboard a {
-            display: block;
-            padding: 15px;
-            background-color: #f1f1f1;
-            color: #333;
-            text-align: center;
-            width: 18%;
-            border-radius: 5px;
-            text-decoration: none;
-        }
-
-        .dashboard a:hover {
-            background-color: var(--primary-color);
-            color: white;
-        }
-
-        .content-page {
-            display: none;
-        }
-
-        .active {
-            display: block;
+        #dark-mode-toggle:hover {
+            background-color: #feb47b;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
             .navbar {
                 flex-direction: column;
             }
@@ -145,18 +130,14 @@
                 flex-direction: column;
                 align-items: center;
             }
-
-            .dashboard a {
-                width: 90%;
-                margin-bottom: 10px;
-            }
         }
     </style>
 </head>
 <body>
     <header>
         <h1>Sharma Elegance Haven</h1>
-        <p>Your Perfect Destination for Comfort and Luxury</p>
+        <p>Where Elegance Meets Comfort | Phone: +91-98765-43210</p>
+        <p>Address: Shyam Nagar, MR10 Road, Indore, Madhya Pradesh, 452010, India</p>
     </header>
 
     <div class="navbar">
@@ -167,85 +148,92 @@
         <a href="javascript:void(0)" onclick="showPage('features')">Features</a>
         <a href="javascript:void(0)" onclick="showPage('contact')">Contact Us</a>
         <a href="javascript:void(0)" onclick="showPage('policies')">Policies</a>
+        <button id="dark-mode-toggle" onclick="toggleDarkMode()">Switch to Dark Mode</button>
     </div>
 
-    <button class="dark-mode-toggle" id="dark-mode-toggle" onclick="toggleDarkMode()">Switch to Dark Mode</button>
-
-    <div class="container">
-        <div id="home" class="content-page active">
-            <h2>Welcome to Sharma Elegance Haven</h2>
-            <p>We offer the best comfort, world-class services, and luxurious amenities to make your stay unforgettable. Enjoy your stay at our five-star property with top-notch rooms, elegant decor, and warm hospitality.</p>
-        </div>
-
-        <div id="reservation" class="content-page">
-            <h2>Make a Reservation</h2>
-            <p>Fill in your details and book your stay with us. We offer easy online reservations and great deals.</p>
-            <button class="button">Reserve Now</button>
-        </div>
-
-        <div id="rooms" class="content-page">
-            <h2>Our Rooms</h2>
-            <p>We offer a variety of rooms including Single and Double Occupancy, each designed with comfort and luxury in mind.</p>
-            <button class="button">View Rooms</button>
-        </div>
-
-        <div id="tariff" class="content-page">
-            <h2>Tariff Plans</h2>
-            <p>We offer competitive and affordable tariffs for all our rooms. Choose the best plan that suits your stay.</p>
-            <button class="button">View Tariffs</button>
-        </div>
-
-        <div id="features" class="content-page">
-            <h2>Features</h2>
-            <p>Our rooms come with premium features like high-speed internet, air-conditioning, mini-bars, room service, and more to ensure a luxurious stay.</p>
-            <button class="button">View Features</button>
-        </div>
-
-        <div id="contact" class="content-page">
-            <h2>Contact Us</h2>
-            <p>Have any questions or need assistance? Reach out to us via phone, email, or social media.</p>
-            <button class="button">Contact</button>
-        </div>
-
-        <div id="policies" class="content-page">
-            <h2>Policies</h2>
-            <p>Our hotel policies regarding cancellations, check-in/out times, and other important details are listed here.</p>
-            <button class="button">Read Policies</button>
-        </div>
+    <div class="content-page" id="home">
+        <h2>Welcome to Sharma Elegance Haven</h2>
+        <p>Experience luxury and comfort at our 5-star hotel in the heart of Indore. We offer world-class amenities and exceptional service to make your stay memorable.</p>
     </div>
 
-    <div class="dashboard">
-        <a href="javascript:void(0)" onclick="showPage('home')">Home</a>
-        <a href="javascript:void(0)" onclick="showPage('reservation')">Reservation</a>
-        <a href="javascript:void(0)" onclick="showPage('rooms')">Rooms</a>
-        <a href="javascript:void(0)" onclick="showPage('tariff')">Tariff Plans</a>
-        <a href="javascript:void(0)" onclick="showPage('features')">Features</a>
-        <a href="javascript:void(0)" onclick="showPage('contact')">Contact Us</a>
-        <a href="javascript:void(0)" onclick="showPage('policies')">Policies</a>
+    <div class="content-page" id="reservation">
+        <h2>Make a Reservation</h2>
+        <p>Reserve your stay with us today! Fill out the reservation form to secure your booking.</p>
+        <!-- Add a simple reservation form here -->
+    </div>
+
+    <div class="content-page" id="rooms">
+        <h2>Our Rooms</h2>
+        <p>We offer a variety of rooms to suit your needs, including Classic Single, Double, and Premium Suites. All rooms come with luxury amenities.</p>
+    </div>
+
+    <div class="content-page" id="tariff">
+        <h2>Tariff Plans</h2>
+        <p>Our tariff plans are designed to offer great value for a 5-star experience. Check out our competitive pricing:</p>
+        <ul>
+            <li>Classic Room (Single): ₹5,000 per night</li>
+            <li>Classic Room (Double): ₹7,000 per night</li>
+            <li>Premium Suite: ₹12,000 per night</li>
+        </ul>
+    </div>
+
+    <div class="content-page" id="features">
+        <h2>Hotel Features</h2>
+        <ul>
+            <li>24/7 Room Service</li>
+            <li>Complimentary Wi-Fi</li>
+            <li>Luxury Spa</li>
+            <li>Fine Dining Restaurant</li>
+            <li>State-of-the-art Fitness Center</li>
+        </ul>
+    </div>
+
+    <div class="content-page" id="contact">
+        <h2>Contact Us</h2>
+        <p>For inquiries, please reach out to us:</p>
+        <p>Email: info@sharmaelegancehaven.com</p>
+        <p>Phone: +91-98765-43210</p>
+        <p>Follow us on social media:</p>
+        <a href="#">Instagram</a> | <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">YouTube</a>
+    </div>
+
+    <div class="content-page" id="policies">
+        <h2>Hotel Policies</h2>
+        <ul>
+            <li>Check-in time: 2:00 PM</li>
+            <li>Check-out time: 12:00 PM</li>
+            <li>Cancellation Policy: 24 hours prior to check-in</li>
+            <li>Pets are not allowed</li>
+        </ul>
     </div>
 
     <script>
+        // Function to toggle dark mode and light mode
+        function toggleDarkMode() {
+            const currentTheme = document.body.getAttribute('data-theme');
+            if (currentTheme === 'dark') {
+                document.body.removeAttribute('data-theme');
+                document.getElementById('dark-mode-toggle').innerText = 'Switch to Dark Mode';
+            } else {
+                document.body.setAttribute('data-theme', 'dark');
+                document.getElementById('dark-mode-toggle').innerText = 'Switch to Light Mode';
+            }
+        }
+
+        // Function to show selected page content
         function showPage(pageId) {
             const pages = document.querySelectorAll('.content-page');
             pages.forEach(page => {
                 page.classList.remove('active');
             });
-
-            document.getElementById(pageId).classList.add('active');
-        }
-
-        function toggleDarkMode() {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const darkModeText = document.getElementById('dark-mode-toggle');
-
-            if (currentTheme === 'dark') {
-                document.documentElement.setAttribute('data-theme', 'light');
-                darkModeText.textContent = "Switch to Dark Mode";
-            } else {
-                document.documentElement.setAttribute('data-theme', 'dark');
-                darkModeText.textContent = "Switch to Light Mode";
+            const activePage = document.getElementById(pageId);
+            if (activePage) {
+                activePage.classList.add('active');
             }
         }
+
+        // Initially show the 'home' page content
+        showPage('home');
     </script>
 </body>
 </html>
