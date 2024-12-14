@@ -4,172 +4,247 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sharma Elegance Haven</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <style>
-        /* Variables for Light and Dark Modes */
+        /* Global Variables for Light and Dark Mode */
         :root {
-            --primary-color: #283e51;
-            --secondary-color: #4b79a1;
-            --text-color: #333;
             --bg-color: #f9f9f9;
+            --text-color: #333;
+            --primary-color: #1e3c72;
+            --secondary-color: #2a5298;
+            --gradient-bg: linear-gradient(to right, #1e3c72, #2a5298);
+            --dark-bg-color: #121212;
+            --dark-text-color: #f9f9f9;
+            --button-bg-color: #2a5298;
         }
 
+        /* Dark Mode */
         [data-theme="dark"] {
-            --primary-color: #1c1c1c;
-            --secondary-color: #444;
-            --text-color: #fff;
             --bg-color: #121212;
+            --text-color: #f9f9f9;
+            --button-bg-color: #333;
         }
 
         body {
-            color: var(--text-color);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
             background-color: var(--bg-color);
-            transition: all 0.3s ease;
+            color: var(--text-color);
         }
 
         header {
-            background-color: var(--primary-color);
-            color: #fff;
-            padding: 15px 0;
+            background: var(--gradient-bg);
+            color: white;
+            padding: 20px 0;
             text-align: center;
         }
 
-        nav a {
-            color: #fff;
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
         }
 
-        .dashboard a {
-            color: var(--primary-color);
-        }
-
-        .dashboard a:hover {
-            background-color: var(--primary-color);
-            color: #fff;
-        }
-
-        footer {
-            background-color: var(--secondary-color);
-            color: #fff;
-            text-align: center;
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
             padding: 10px;
         }
 
-        .social-icons a {
-            color: #fff;
-            margin: 0 10px;
-            font-size: 1.5rem;
+        .navbar a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+            font-size: 1.2em;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .button {
+            background-color: var(--button-bg-color);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2em;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .button:hover {
+            background-color: #1e3c72;
         }
 
         .dark-mode-toggle {
             position: fixed;
-            top: 10px;
+            top: 20px;
             right: 20px;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 20px;
-            cursor: pointer;
             background-color: var(--primary-color);
-            color: #fff;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .dark-mode-toggle:hover {
+            background-color: #333;
+        }
+
+        .dashboard {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+        .dashboard a {
+            display: block;
+            padding: 15px;
+            background-color: #f1f1f1;
+            color: #333;
+            text-align: center;
+            width: 18%;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .dashboard a:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .content-page {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+            }
+
+            .dashboard {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .dashboard a {
+                width: 90%;
+                margin-bottom: 10px;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Dark Mode Toggle -->
-    <button class="dark-mode-toggle" onclick="toggleDarkMode()">Dark Mode</button>
-
-    <!-- Header -->
     <header>
         <h1>Sharma Elegance Haven</h1>
-        <p>Where Elegance Meets Comfort</p>
-        <p>Phone: +91-98765-43210 | Email: info@sharmaelegancehaven.com</p>
-        <p>Shyam Nagar, MR10 Road, Indore, Madhya Pradesh, India</p>
+        <p>Your Perfect Destination for Comfort and Luxury</p>
     </header>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Dashboard</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#registration">Registration</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#rooms">Rooms</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#tariff">Tariff</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#help">Help</a></li>
-                </ul>
-            </div>
+    <div class="navbar">
+        <a href="javascript:void(0)" onclick="showPage('home')">Home</a>
+        <a href="javascript:void(0)" onclick="showPage('reservation')">Reservation</a>
+        <a href="javascript:void(0)" onclick="showPage('rooms')">Rooms</a>
+        <a href="javascript:void(0)" onclick="showPage('tariff')">Tariff Plans</a>
+        <a href="javascript:void(0)" onclick="showPage('features')">Features</a>
+        <a href="javascript:void(0)" onclick="showPage('contact')">Contact Us</a>
+        <a href="javascript:void(0)" onclick="showPage('policies')">Policies</a>
+    </div>
+
+    <button class="dark-mode-toggle" id="dark-mode-toggle" onclick="toggleDarkMode()">Switch to Dark Mode</button>
+
+    <div class="container">
+        <div id="home" class="content-page active">
+            <h2>Welcome to Sharma Elegance Haven</h2>
+            <p>We offer the best comfort, world-class services, and luxurious amenities to make your stay unforgettable. Enjoy your stay at our five-star property with top-notch rooms, elegant decor, and warm hospitality.</p>
         </div>
-    </nav>
 
-    <!-- Home Section -->
-    <section id="home" class="text-center p-5">
-        <h2>Welcome to Sharma Elegance Haven</h2>
-        <p>Experience the luxury of a 5-star stay with world-class amenities and exceptional service.</p>
-    </section>
-
-    <!-- Registration Section -->
-    <section id="registration" class="p-5">
-        <h3>Guest Registration</h3>
-        <form class="form-container">
-            <input type="text" placeholder="Full Name" required>
-            <input type="email" placeholder="Email" required>
-            <input type="tel" placeholder="Phone Number" required>
-            <select required>
-                <option value="">Select Room Type</option>
-                <option value="single">Single Occupancy</option>
-                <option value="double">Double Occupancy</option>
-                <option value="suite">Suite</option>
-            </select>
-            <button type="submit">Register</button>
-        </form>
-    </section>
-
-    <!-- Rooms Section -->
-    <section id="rooms" class="p-5">
-        <h3>Our Rooms</h3>
-        <p>We offer luxurious rooms with state-of-the-art amenities for a memorable stay.</p>
-    </section>
-
-    <!-- Tariff Section -->
-    <section id="tariff" class="p-5">
-        <h3>Tariff</h3>
-        <p>Explore our competitive pricing for your perfect stay.</p>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="p-5">
-        <h3>Contact Us</h3>
-        <form class="form-container">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" rows="5" required></textarea>
-            <button type="submit">Send</button>
-        </form>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Sharma Elegance Haven. All Rights Reserved.</p>
-        <div class="social-icons">
-            <a href="https://instagram.com" target="_blank"><i class="bi bi-instagram"></i></a>
-            <a href="https://facebook.com" target="_blank"><i class="bi bi-facebook"></i></a>
-            <a href="https://twitter.com" target="_blank"><i class="bi bi-twitter"></i></a>
-            <a href="https://youtube.com" target="_blank"><i class="bi bi-youtube"></i></a>
+        <div id="reservation" class="content-page">
+            <h2>Make a Reservation</h2>
+            <p>Fill in your details and book your stay with us. We offer easy online reservations and great deals.</p>
+            <button class="button">Reserve Now</button>
         </div>
-    </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        <div id="rooms" class="content-page">
+            <h2>Our Rooms</h2>
+            <p>We offer a variety of rooms including Single and Double Occupancy, each designed with comfort and luxury in mind.</p>
+            <button class="button">View Rooms</button>
+        </div>
+
+        <div id="tariff" class="content-page">
+            <h2>Tariff Plans</h2>
+            <p>We offer competitive and affordable tariffs for all our rooms. Choose the best plan that suits your stay.</p>
+            <button class="button">View Tariffs</button>
+        </div>
+
+        <div id="features" class="content-page">
+            <h2>Features</h2>
+            <p>Our rooms come with premium features like high-speed internet, air-conditioning, mini-bars, room service, and more to ensure a luxurious stay.</p>
+            <button class="button">View Features</button>
+        </div>
+
+        <div id="contact" class="content-page">
+            <h2>Contact Us</h2>
+            <p>Have any questions or need assistance? Reach out to us via phone, email, or social media.</p>
+            <button class="button">Contact</button>
+        </div>
+
+        <div id="policies" class="content-page">
+            <h2>Policies</h2>
+            <p>Our hotel policies regarding cancellations, check-in/out times, and other important details are listed here.</p>
+            <button class="button">Read Policies</button>
+        </div>
+    </div>
+
+    <div class="dashboard">
+        <a href="javascript:void(0)" onclick="showPage('home')">Home</a>
+        <a href="javascript:void(0)" onclick="showPage('reservation')">Reservation</a>
+        <a href="javascript:void(0)" onclick="showPage('rooms')">Rooms</a>
+        <a href="javascript:void(0)" onclick="showPage('tariff')">Tariff Plans</a>
+        <a href="javascript:void(0)" onclick="showPage('features')">Features</a>
+        <a href="javascript:void(0)" onclick="showPage('contact')">Contact Us</a>
+        <a href="javascript:void(0)" onclick="showPage('policies')">Policies</a>
+    </div>
+
     <script>
-        // Dark Mode Toggle Function
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.content-page');
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+
+            document.getElementById(pageId).classList.add('active');
+        }
+
         function toggleDarkMode() {
-            const currentTheme = document.body.getAttribute('data-theme');
-            document.body.setAttribute('data-theme', currentTheme === 'dark' ? 'light' : 'dark');
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const darkModeText = document.getElementById('dark-mode-toggle');
+
+            if (currentTheme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'light');
+                darkModeText.textContent = "Switch to Dark Mode";
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                darkModeText.textContent = "Switch to Light Mode";
+            }
         }
     </script>
 </body>
