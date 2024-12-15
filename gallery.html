@@ -1,30 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gallery</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Sharma Elegance Haven</title>
+    <style>
+        /* General styling for the page */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Header section */
+        header {
+            background-color: #4CAF50;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 18px;
+        }
+
+        /* Gallery section */
+        .gallery-section {
+            padding: 40px 20px;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .gallery-section h2 {
+            font-size: 30px;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+
+        .gallery-section p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-grid img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Footer section */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+
+        footer a {
+            color: #f4f4f4;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #4CAF50;
+        }
+    </style>
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <!-- Same Navbar -->
-  </nav>
 
-  <!-- Gallery Section -->
-  <div class="container mt-5">
-    <h1>Gallery</h1>
-    <div class="row">
-      <div class="col-md-4"><img src="images/hotel1.jpg" class="img-fluid" alt="Hotel Image"></div>
-      <div class="col-md-4"><img src="images/hotel2.jpg" class="img-fluid" alt="Hotel Image"></div>
-      <div class="col-md-4"><img src="images/hotel3.jpg" class="img-fluid" alt="Hotel Image"></div>
+<header>
+    <h1>Sharma Elegance Haven</h1>
+    <p>Where Elegance Meets Comfort</p>
+</header>
+
+<div class="gallery-section">
+    <h2>Gallery</h2>
+    <p>Explore the elegance and luxury of Sharma Elegance Haven through our gallery. Here, you can get a glimpse of the hotel’s beautiful rooms, dining areas, spa, and other facilities.</p>
+    
+    <div class="gallery-grid">
+        <img src="room1.jpg" alt="Luxurious Room">
+        <img src="dining1.jpg" alt="Fine Dining Experience">
+        <img src="spa.jpg" alt="Spa & Wellness Center">
+        <img src="lobby.jpg" alt="Hotel Lobby">
+        <img src="pool.jpg" alt="Swimming Pool">
+        <img src="exterior.jpg" alt="Hotel Exterior">
     </div>
-  </div>
+</div>
 
-  <!-- Footer -->
-  <footer class="text-center mt-5 p-4 bg-light">
-    <!-- Same footer -->
-  </footer>
+<footer>
+    <p>&copy; 2024 Sharma Elegance Haven | <a href="mailto:info@sharmaelegancehaven.com">info@sharmaelegancehaven.com</a> | <a href="tel:+91-98765-43210">+91-98765-43210</a></p>
+</footer>
+
 </body>
 </html>
