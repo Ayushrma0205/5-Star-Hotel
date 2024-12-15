@@ -1,239 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sharma Elegance Haven</title>
-    <style>
-        /* Global Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Arial', sans-serif;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        body[data-theme="dark"] {
-            background-color: #121212;
-            color: #fff;
-        }
-
-        header {
-            background: linear-gradient(135deg, #ff7e5f, #feb47b);
-            color: white;
-            padding: 15px;
-            text-align: center;
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-        }
-
-        header p {
-            font-size: 1.2rem;
-        }
-
-        /* Navbar */
-        .navbar {
-            display: flex;
-            justify-content: center;
-            background-color: #333;
-            padding: 10px;
-            margin-bottom: 20px;
-        }
-
-        .navbar a {
-            color: white;
-            text-decoration: none;
-            padding: 15px;
-            font-size: 1.2rem;
-            margin: 0 10px;
-            transition: background-color 0.3s;
-        }
-
-        .navbar a:hover {
-            background-color: #444;
-            border-radius: 5px;
-        }
-
-        /* Dashboard */
-        .dashboard {
-            display: flex;
-            justify-content: space-between;
-            background-color: #fff;
-            padding: 20px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .dashboard a {
-            color: #333;
-            text-decoration: none;
-            font-size: 1.2rem;
-            margin: 10px;
-        }
-
-        .dashboard a:hover {
-            color: #ff7e5f;
-        }
-
-        /* Section Pages */
-        .content-page {
-            display: none;
-            padding: 20px;
-        }
-
-        .content-page.active {
-            display: block;
-        }
-
-        .content-page h2 {
-            margin-bottom: 15px;
-            color: #333;
-        }
-
-        .content-page p {
-            font-size: 1rem;
-            margin-bottom: 15px;
-        }
-
-        /* Dark Mode Button */
-        #dark-mode-toggle {
-            cursor: pointer;
-            background-color: #ff7e5f;
-            border: none;
-            color: white;
-            padding: 10px 20px;
-            font-size: 1.1rem;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
-
-        #dark-mode-toggle:hover {
-            background-color: #feb47b;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2rem;
-            }
-
-            .navbar {
-                flex-direction: column;
-            }
-
-            .dashboard {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sharma Elegance Haven</title>
+  <link rel="stylesheet" href="assets/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <h1>Sharma Elegance Haven</h1>
-        <p>Where Elegance Meets Comfort | Phone: +91-98765-43210</p>
-        <p>Address: Shyam Nagar, MR10 Road, Indore, Madhya Pradesh, 452010, India</p>
-    </header>
-
-    <div class="navbar">
-        <a href="javascript:void(0)" onclick="showPage('home')">Home</a>
-        <a href="javascript:void(0)" onclick="showPage('reservation')">Reservation</a>
-        <a href="javascript:void(0)" onclick="showPage('rooms')">Rooms</a>
-        <a href="javascript:void(0)" onclick="showPage('tariff')">Tariff Plans</a>
-        <a href="javascript:void(0)" onclick="showPage('features')">Features</a>
-        <a href="javascript:void(0)" onclick="showPage('contact')">Contact Us</a>
-        <a href="javascript:void(0)" onclick="showPage('policies')">Policies</a>
-        <button id="dark-mode-toggle" onclick="toggleDarkMode()">Switch to Dark Mode</button>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <a class="navbar-brand" href="#">Sharma Elegance Haven</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="rooms.html">Rooms</a></li>
+        <li class="nav-item"><a class="nav-link" href="reservation.html">Reservation</a></li>
+        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
     </div>
+  </nav>
 
-    <div class="content-page" id="home">
-        <h2>Welcome to Sharma Elegance Haven</h2>
-        <p>Experience luxury and comfort at our 5-star hotel in the heart of Indore. We offer world-class amenities and exceptional service to make your stay memorable.</p>
+  <!-- Hero Section -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <div id="carouselExample" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="images/hotel1.jpg" class="d-block w-100" alt="Hotel Image 1">
+            </div>
+            <div class="carousel-item">
+              <img src="images/hotel2.jpg" class="d-block w-100" alt="Hotel Image 2">
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          </a>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <div class="content-page" id="reservation">
-        <h2>Make a Reservation</h2>
-        <p>Reserve your stay with us today! Fill out the reservation form to secure your booking.</p>
-        <!-- Add a simple reservation form here -->
-    </div>
+  <!-- Social Media -->
+  <footer class="text-center mt-5">
+    <a href="https://facebook.com" target="_blank">Facebook</a> |
+    <a href="https://instagram.com" target="_blank">Instagram</a> |
+    <a href="https://twitter.com" target="_blank">Twitter</a> |
+    <a href="https://youtube.com" target="_blank">YouTube</a>
+  </footer>
 
-    <div class="content-page" id="rooms">
-        <h2>Our Rooms</h2>
-        <p>We offer a variety of rooms to suit your needs, including Classic Single, Double, and Premium Suites. All rooms come with luxury amenities.</p>
-    </div>
-
-    <div class="content-page" id="tariff">
-        <h2>Tariff Plans</h2>
-        <p>Our tariff plans are designed to offer great value for a 5-star experience. Check out our competitive pricing:</p>
-        <ul>
-            <li>Classic Room (Single): ₹5,000 per night</li>
-            <li>Classic Room (Double): ₹7,000 per night</li>
-            <li>Premium Suite: ₹12,000 per night</li>
-        </ul>
-    </div>
-
-    <div class="content-page" id="features">
-        <h2>Hotel Features</h2>
-        <ul>
-            <li>24/7 Room Service</li>
-            <li>Complimentary Wi-Fi</li>
-            <li>Luxury Spa</li>
-            <li>Fine Dining Restaurant</li>
-            <li>State-of-the-art Fitness Center</li>
-        </ul>
-    </div>
-
-    <div class="content-page" id="contact">
-        <h2>Contact Us</h2>
-        <p>For inquiries, please reach out to us:</p>
-        <p>Email: info@sharmaelegancehaven.com</p>
-        <p>Phone: +91-98765-43210</p>
-        <p>Follow us on social media:</p>
-        <a href="#">Instagram</a> | <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">YouTube</a>
-    </div>
-
-    <div class="content-page" id="policies">
-        <h2>Hotel Policies</h2>
-        <ul>
-            <li>Check-in time: 2:00 PM</li>
-            <li>Check-out time: 12:00 PM</li>
-            <li>Cancellation Policy: 24 hours prior to check-in</li>
-            <li>Pets are not allowed</li>
-        </ul>
-    </div>
-
-    <script>
-        // Function to toggle dark mode and light mode
-        function toggleDarkMode() {
-            const currentTheme = document.body.getAttribute('data-theme');
-            if (currentTheme === 'dark') {
-                document.body.removeAttribute('data-theme');
-                document.getElementById('dark-mode-toggle').innerText = 'Switch to Dark Mode';
-            } else {
-                document.body.setAttribute('data-theme', 'dark');
-                document.getElementById('dark-mode-toggle').innerText = 'Switch to Light Mode';
-            }
-        }
-
-        // Function to show selected page content
-        function showPage(pageId) {
-            const pages = document.querySelectorAll('.content-page');
-            pages.forEach(page => {
-                page.classList.remove('active');
-            });
-            const activePage = document.getElementById(pageId);
-            if (activePage) {
-                activePage.classList.add('active');
-            }
-        }
-
-        // Initially show the 'home' page content
-        showPage('home');
-    </script>
+  <script src="js/script.js"></script>
+  <script src="assets/bootstrap.min.js"></script>
 </body>
 </html>
