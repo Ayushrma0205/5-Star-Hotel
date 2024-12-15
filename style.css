@@ -1,0 +1,17 @@
+/* Basic Styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+footer {
+  background-color: #f8f9fa;
+  padding: 10px 0;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
