@@ -1,55 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rooms</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rooms - Sharma Elegance Haven</title>
+    <style>
+        /* General styling for the page */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Header section */
+        header {
+            background-color: #4CAF50;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 18px;
+        }
+
+        /* Rooms section */
+        .rooms-section {
+            padding: 40px 20px;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .rooms-section h2 {
+            font-size: 30px;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+
+        .rooms-section p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+
+        /* Room cards */
+        .room-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .room-card {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            transition: transform 0.3s ease;
+        }
+
+        .room-card:hover {
+            transform: scale(1.05);
+        }
+
+        .room-card img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .room-card h3 {
+            font-size: 24px;
+            color: #333;
+            margin: 0 0 10px;
+        }
+
+        .room-card p {
+            font-size: 16px;
+            color: #555;
+            margin: 0 0 10px;
+        }
+
+        .room-card .price {
+            font-size: 20px;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+
+        /* Footer section */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+
+        footer a {
+            color: #f4f4f4;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #4CAF50;
+        }
+    </style>
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <!-- Same Navbar as previous pages -->
-  </nav>
 
-  <!-- Rooms Section -->
-  <div class="container mt-5">
-    <h1>Rooms</h1>
-    <div class="row">
-      <div class="col-md-4">
-        <div class="card">
-          <img src="images/room1.jpg" class="card-img-top" alt="Room 1">
-          <div class="card-body">
-            <h5 class="card-title">Deluxe Room</h5>
-            <p class="card-text">A spacious and comfortable room with all modern amenities.</p>
-          </div>
+<header>
+    <h1>Sharma Elegance Haven</h1>
+    <p>Where Elegance Meets Comfort</p>
+</header>
+
+<div class="rooms-section">
+    <h2>Our Rooms</h2>
+    <p>Discover our exquisite range of rooms, designed for comfort and luxury. Whether you’re traveling alone or with a companion, we offer accommodations that suit every need.</p>
+    
+    <div class="room-cards">
+        <!-- Classic Room -->
+        <div class="room-card">
+            <img src="classic-room.jpg" alt="Classic Room">
+            <h3>Classic Room</h3>
+            <p>Enjoy the simplicity and comfort of our Classic Room, perfect for solo travelers or couples. Equipped with all essential amenities for a relaxing stay.</p>
+            <p>Occupancy: Single / Double</p>
+            <p class="price">₹ 3,500 per night</p>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <img src="images/room2.jpg" class="card-img-top" alt="Room 2">
-          <div class="card-body">
-            <h5 class="card-title">Executive Suite</h5>
-            <p class="card-text">Perfect for business travelers seeking luxury and functionality.</p>
-          </div>
+
+        <!-- Superior Room -->
+        <div class="room-card">
+            <img src="superior-room.jpg" alt="Superior Room">
+            <h3>Superior Room</h3>
+            <p>Our Superior Room offers an upgraded experience with spacious interiors, premium furnishings, and modern amenities.</p>
+            <p>Occupancy: Single / Double</p>
+            <p class="price">₹ 5,000 per night</p>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <img src="images/room3.jpg" class="card-img-top" alt="Room 3">
-          <div class="card-body">
-            <h5 class="card-title">Presidential Suite</h5>
-            <p class="card-text">An unmatched luxurious experience with exclusive amenities.</p>
-          </div>
+
+        <!-- Deluxe Room -->
+        <div class="room-card">
+            <img src="deluxe-room.jpg" alt="Deluxe Room">
+            <h3>Deluxe Room</h3>
+            <p>The Deluxe Room provides a luxurious setting with extra space, enhanced comfort, and high-end facilities, perfect for a longer stay.</p>
+            <p>Occupancy: Single / Double</p>
+            <p class="price">₹ 7,500 per night</p>
         </div>
-      </div>
+
+        <!-- Executive Room -->
+        <div class="room-card">
+            <img src="executive-room.jpg" alt="Executive Room">
+            <h3>Executive Room</h3>
+            <p>Our Executive Room is tailored for business travelers, featuring a work desk, high-speed internet, and other amenities to make your stay productive.</p>
+            <p>Occupancy: Single / Double</p>
+            <p class="price">₹ 10,000 per night</p>
+        </div>
+
+        <!-- Suite Room -->
+        <div class="room-card">
+            <img src="suite-room.jpg" alt="Suite Room">
+            <h3>Suite Room</h3>
+            <p>Experience ultimate luxury in our Suite Room, with a separate living area, private bedroom, and exceptional services for an unforgettable stay.</p>
+            <p>Occupancy: Single / Double</p>
+            <p class="price">₹ 15,000 per night</p>
+        </div>
     </div>
-  </div>
+</div>
 
-  <!-- Footer -->
-  <footer class="text-center mt-5 p-4 bg-light">
-    <!-- Same footer -->
-  </footer>
+<footer>
+    <p>&copy; 2024 Sharma Elegance Haven | <a href="mailto:info@sharmaelegancehaven.com">info@sharmaelegancehaven.com</a> | <a href="tel:+91-98765-43210">+91-98765-43210</a></p>
+</footer>
+
 </body>
 </html>
