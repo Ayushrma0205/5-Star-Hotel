@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reservation</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- Same Navbar -->
+  </nav>
+
+  <!-- Reservation Form -->
+  <div class="container mt-5">
+    <h1>Make a Reservation</h1>
+    <form>
+      <div class="mb-3">
+        <label for="fullName" class="form-label">Full Name</label>
+        <input type="text" class="form-control" id="fullName" required>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email Address</label>
+        <input type="email" class="form-control" id="email" required>
+      </div>
+      <div class="mb-3">
+        <label for="roomType" class="form-label">Room Type</label>
+        <select class="form-select" id="roomType">
+          <option>Deluxe Room</option>
+          <option>Executive Suite</option>
+          <option>Presidential Suite</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="checkIn" class="form-label">Check-In Date</label>
+        <input type="date" class="form-control" id="checkIn" required>
+      </div>
+      <div class="mb-3">
+        <label for="checkOut" class="form-label">Check-Out Date</label>
+        <input type="date" class="form-control" id="checkOut" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center mt-5 p-4 bg-light">
+    <!-- Same footer -->
+  </footer>
+</body>
+</html>
