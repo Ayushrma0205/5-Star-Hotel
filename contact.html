@@ -3,117 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Sharma Elegance Haven</title>
-    <style>
-        /* General styling for the page */
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-
-        /* Header section */
-        header {
-            background-color: #4CAF50;
-            padding: 20px;
-            text-align: center;
-            color: white;
-        }
-
-        header h1 {
-            font-size: 36px;
-            margin: 0;
-        }
-
-        header p {
-            font-size: 18px;
-        }
-
-        /* Contact section */
-        .contact-section {
-            padding: 40px 20px;
-            background-color: #fff;
-            text-align: center;
-        }
-
-        .contact-section h2 {
-            font-size: 30px;
-            color: #4CAF50;
-            margin-bottom: 20px;
-        }
-
-        .contact-section form {
-            max-width: 600px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .contact-section input, .contact-section textarea {
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            width: 100%;
-        }
-
-        .contact-section input[type="submit"] {
-            background-color: #4CAF50;
-            color: white;
-            cursor: pointer;
-            border: none;
-            font-size: 18px;
-        }
-
-        .contact-section input[type="submit"]:hover {
-            background-color: #45a049;
-        }
-
-        /* Footer section */
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            font-size: 14px;
-        }
-
-        footer a {
-            color: #f4f4f4;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            color: #4CAF50;
-        }
-    </style>
+    <title>Contact Us | Sharma Elegance Haven</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
-
-<header>
-    <h1>Sharma Elegance Haven</h1>
-    <p>Where Elegance Meets Comfort</p>
-</header>
-
-<div class="contact-section">
-    <h2>Contact Us</h2>
-    <p>If you have any questions, feel free to reach out to us. We're here to assist you!</p>
-    
-    <form action="submit-form.php" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <input type="text" name="subject" placeholder="Subject" required>
-        <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
-        <input type="submit" value="Send Message">
-    </form>
-</div>
-
-<footer>
-    <p>&copy; 2024 Sharma Elegance Haven | <a href="mailto:info@sharmaelegancehaven.com">info@sharmaelegancehaven.com</a> | <a href="tel:+91-98765-43210">+91-98765-43210</a></p>
-</footer>
-
-</body>
-</html>
+    <header>
+        <nav>
+            <h1>Sharma Elegance Haven</h1>
+            <button id="theme-toggle">Dark Mode</button>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="rooms.html">Rooms</a></li>
+                <li><a href="reservation.html">Reservation</a></li>
+                <li><a href="tariff.html">Tariff</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="contact-section">
+            <h2>Contact Us</h2>
+            <form action="#" method="post">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+        <section class="location">
+            <h3>Our Location</h3>
+            <p>Sharma Elegance Haven, Shyam Nagar, MR10 Road, Indore, Madhya Pradesh
