@@ -3,177 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Features - Sharma Elegance Haven</title>
-    <style>
-        /* General styling for the page */
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-
-        /* Header section */
-        header {
-            background-color: #4CAF50;
-            padding: 20px;
-            text-align: center;
-            color: white;
-        }
-
-        header h1 {
-            font-size: 36px;
-            margin: 0;
-        }
-
-        header p {
-            font-size: 18px;
-        }
-
-        /* Features section */
-        .features-section {
-            padding: 40px 20px;
-            background-color: #fff;
-            text-align: center;
-        }
-
-        .features-section h2 {
-            font-size: 30px;
-            color: #4CAF50;
-            margin-bottom: 20px;
-        }
-
-        .features-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            padding: 20px;
-        }
-
-        .feature-item {
-            background-color: #e9f7e7;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .feature-item h3 {
-            font-size: 22px;
-            color: #4CAF50;
-            margin-bottom: 10px;
-        }
-
-        .feature-item p {
-            font-size: 16px;
-            color: #555;
-        }
-
-        .feature-item i {
-            font-size: 50px;
-            color: #4CAF50;
-            margin-bottom: 10px;
-        }
-
-        /* Footer section */
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            font-size: 14px;
-        }
-
-        footer a {
-            color: #f4f4f4;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            color: #4CAF50;
-        }
-    </style>
+    <title>Features | Sharma Elegance Haven</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
-
-<header>
-    <h1>Sharma Elegance Haven</h1>
-    <p>Where Elegance Meets Comfort</p>
-</header>
-
-<div class="features-section">
-    <h2>Our Features</h2>
-    <p>We offer a range of luxurious and convenient amenities to make your stay comfortable and enjoyable. Discover what we have to offer:</p>
-
-    <div class="features-list">
-        <div class="feature-item">
-            <i class="fa fa-wifi"></i>
-            <h3>Free Wi-Fi</h3>
-            <p>Stay connected with fast and free Wi-Fi available throughout the hotel.</p>
-        </div>
-        <div class="feature-item">
-            <i class="fa fa-dumbbell"></i>
-            <h3>Gym</h3>
-            <p>Our fully equipped gym is available to help you maintain your fitness routine during your stay.</p>
-        </div>
-        <div class="feature-item">
-            <i class="fa fa-swimmer"></i>
-            <h3>Swimming Pool</h3>
-            <p>Relax and unwind in our beautiful swimming pool, designed for ultimate relaxation.</p>
-        </div>
-        <div class="feature-item">
-            <i class="fa fa-spa"></i>
-            <h3>Spa</h3>
-            <p>Enjoy a rejuvenating experience at our luxury spa for total relaxation.</p>
-        </div>
-        <div class="feature-item">
-            <i class="fa fa-concierge-bell"></i>
-            <h3>24/7 Room Service</h3>
-            <p>Our attentive staff is available around the clock to cater to your needs with room service.</p>
-        </div>
-        <div class="feature-item">
-            <i class="fa fa-coffee"></i>
-            <h3>Complimentary Breakfast</h3>
-            <p>Start your day with a delicious and healthy complimentary breakfast.</p>
-        </div>
-        <div class="feature-item">
-            <i class="fa fa-briefcase"></i>
-            <h3>Business Center</h3>
-            <p>Our business center is equipped with modern facilities for all your professional needs.</p>
-        </div>
-        <div class="feature-item">
-            <i class="fa fa-shopping-bag"></i>
-            <h3>Shopping Arcades</h3>
-            <p>Enjoy shopping at our in-house retail shops offering the finest products.</p>
-        </div>
-        <div class="feature-item">
-            <i class="fa fa-users"></i>
-            <h3>Banquet Hall</h3>
-            <p>Host your special events in our elegant banquet hall, perfect for weddings and conferences.</p>
-        </div>
-        <div class="feature-item">
-            <i class="fa fa-child"></i>
-            <h3>Kids Playing Area</h3>
-            <p>Our kids' playing area offers a fun and safe environment for children to enjoy.</p>
-        </div>
-        <div class="feature-item">
-            <i class="fa fa-map-marker-alt"></i>
-            <h3>Nearby Attractions</h3>
-            <p>Explore nearby attractions such as museums, parks, and historic sites.</p>
-        </div>
-        <div class="feature-item">
-            <i class="fa fa-utensils"></i>
-            <h3>Restaurants & Bars</h3>
-            <p>Indulge in exquisite dining at our restaurants and enjoy a drink at our stylish bar.</p>
-        </div>
-    </div>
-</div>
-
-<footer>
-    <p>&copy; 2024 Sharma Elegance Haven | <a href="mailto:info@sharmaelegancehaven.com">info@sharmaelegancehaven.com</a> | <a href="tel:+91-98765-43210">+91-98765-43210</a></p>
-</footer>
-
+    <header>
+        <nav>
+            <h1>Sharma Elegance Haven</h1>
+            <button id="theme-toggle">Dark Mode</button>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="rooms.html">Rooms</a></li>
+                <li><a href="reservation.html">Reservation</a></li>
+                <li><a href="tariff.html">Tariff</a></li>
+                <li><a href="features.html">Features</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="features-section">
+            <h2>Hotel Features</h2>
+            <ul>
+                <li>24/7 Concierge Service</li>
+                <li>Fully Equipped Fitness Center</li>
+                <li>Outdoor Swimming Pool</li>
+                <li>Multi-Cuisine Restaurant</li>
+                <li>Spa and Wellness Center</li>
+                <li>Business Center</li>
+                <li>Luxury Airport Transfers</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Sharma Elegance Haven. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>
